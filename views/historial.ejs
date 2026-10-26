@@ -1,0 +1,7 @@
+<%- include('partials_head') %>
+<div class="card"><h2>Historial de accesos</h2>
+<form><input name="placa" value="<%= placa %>" placeholder="Filtrar por placa"> <button>Buscar</button></form><br>
+<table><tr><th>Placa</th><th>Celda</th><th>Entrada</th><th>Salida</th><th>Novedad</th></tr>
+<% rows.forEach(r => { %><tr><td><%= r.placa %></td><td><%= r.codigo %></td><td><%= r.fecha_entrada %></td><td><%= r.fecha_salida || '—' %></td><td><%= r.observacion || '' %></td></tr><% }) %>
+<% if (!rows.length) { %><tr><td colspan="5">Sin registros.</td></tr><% } %></table></div>
+<%- include('partials_foot') %>

@@ -1,0 +1,8 @@
+<%- include('partials_head') %>
+<div class="card"><h2>Estado de celdas</h2>
+<% celdas.forEach(c => { %><span class="celda <%= c.estado %>"><%= c.codigo %><br><small><%= c.estado %></small></span><% }) %></div>
+<div class="card"><h2>Vehículos dentro (<%= dentro.length %>)</h2>
+<table><tr><th>Placa</th><th>Celda</th><th>Entrada</th></tr>
+<% dentro.forEach(d => { %><tr><td><%= d.placa %></td><td><%= d.codigo %></td><td><%= d.fecha_entrada %></td></tr><% }) %>
+<% if (!dentro.length) { %><tr><td colspan="3">Sin vehículos.</td></tr><% } %></table></div>
+<%- include('partials_foot') %>

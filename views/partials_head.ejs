@@ -1,0 +1,17 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autos Colombia</title>
+<style>
+body{font-family:system-ui,sans-serif;margin:0;background:#f4f6f8;color:#1b2430}
+nav{background:#12355b;padding:12px 20px}nav a{color:#fff;margin-right:18px;text-decoration:none;font-weight:600}
+main{max-width:860px;margin:20px auto;padding:0 16px}
+.card{background:#fff;border-radius:10px;padding:18px;margin-bottom:16px;box-shadow:0 1px 3px #0002}
+input,button{padding:10px;font-size:1rem;border-radius:6px;border:1px solid #bbb}
+button{background:#12355b;color:#fff;border:0;cursor:pointer}
+table{width:100%;border-collapse:collapse}td,th{padding:8px;border-bottom:1px solid #eee;text-align:left}
+.ok{background:#d9f2e0;padding:10px;border-radius:6px}.error{background:#fbdcdc;padding:10px;border-radius:6px}
+.celda{display:inline-block;width:70px;padding:10px;margin:4px;text-align:center;border-radius:8px;color:#fff}
+.LIBRE{background:#2e9e5b}.OCUPADA{background:#c0392b}.MANTENIMIENTO{background:#888}
+</style></head><body>
+<nav><a href="/">Inicio</a><a href="/entrada">Entrada</a><a href="/salida">Salida</a><a href="/historial">Historial</a></nav>
+<main><% if (aviso) { %><p class="<%= aviso.ok ? 'ok' : 'error' %>"><%= aviso.mensaje %></p><% } %>
